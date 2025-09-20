@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    gap: 10px; /* Espaçamento entre as áreas */
+    font-family: sans-serif; /* Escolha uma fonte legível */
+     grid-template-areas:
+        "header header"
+        "main   aside"
+        "footer footer";
+    grid-template-rows: auto 1fr auto; /* Cabeçalho e rodapé com altura automática, conteúdo principal flexível */
+    grid-template-columns: 3fr 1fr; /* Conteúdo principal ocupa 3/4 e o aside 1/4 do espaço */
+}
+header, main, section, aside, footer {
+    background-color: #f0eaae; /* Cor de pergaminho (bege claro) */
+    border: 2px solid #5a4211; /* Cor de tinta antiga (marrom escuro) */
+    padding: 20px;
+    border-radius: 5px;
+    
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+    /* O main também pode ser um grid para organizar a section e o aside,
+       mas para este exercício, vamos manter o grid no body. */
+}
+
+/* Vamos ser mais específicos para o layout funcionar como no body */
+section {
+   grid-area: main; /* Colocamos a section na área 'main' */
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}
